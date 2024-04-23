@@ -750,8 +750,9 @@ a {
   }
 
   .image-8 {
-    width: auto;
+    width: 80%;
     min-width: auto;
+    display: block;
   }
 
   .image-9 {
@@ -947,9 +948,9 @@ a {
   }
 
   .image-8 {
-    width: 100%;
+    width: 80%;
     height: 500px;
-    min-width: 100%;
+    min-width: 80%;
     -o-object-fit: contain;
     object-fit: contain;
   }
@@ -1079,9 +1080,8 @@ a {
     font-size: 16px;
   }
 
-  .image-8 {
-    margin-bottom: -60px;
-  }
+  {/*.image-8 {
+    {/*margin-bottom: -20px;*/}
 
   .image-9 {
     padding: 20px;
