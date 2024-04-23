@@ -220,6 +220,7 @@ a {
 
 .div-block-3.section {
   overflow: visible;
+  background-color: #CCF2F9;
 }
 
 .heading-4 {
@@ -750,7 +751,7 @@ a {
   }
 
   .image-8 {
-    width: 80%;
+    width: 100%;
     min-width: auto;
     display: block;
   }
@@ -948,7 +949,7 @@ a {
   }
 
   .image-8 {
-    width: 80%;
+    width: 100%;
     height: 500px;
     min-width: 80%;
     -o-object-fit: contain;
@@ -1080,8 +1081,6 @@ a {
     font-size: 16px;
   }
 
-  {/*.image-8 {
-    {/*margin-bottom: -20px;*/}
 
   .image-9 {
     padding: 20px;
