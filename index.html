@@ -5210,7 +5210,7 @@
       
       // Placeholder function - Replace with your specific transaction logic
       function copyToClipboard() {
-        const copyText = document.getElementById("copyTarget");
+        const copyText = document.getElementById("copyTarget").innerText.trim();
         const selection = window.getSelection();
         const range = document.createRange();
         range.selectNode(copyText);
