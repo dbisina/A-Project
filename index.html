@@ -5209,14 +5209,14 @@
       
       // Placeholder function - Replace with your specific transaction logic
       function copyToClipboard() {
-  const copyText = document.getElementById("copyTarget");
-  const selection = window.getSelection();
-  const range = document.createRange();
-  range.selectNode(copyText);
-  selection.removeAllRanges();
-  selection.addRange(range);
-  document.execCommand("copy");
-  selection.removeAllRanges();
+        const copyText = document.getElementById("copyTarget");
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNode(copyText);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges();
   
 
   // Update button text to "Copied"
