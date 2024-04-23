@@ -5198,6 +5198,7 @@
       type="text/javascript"
     ></script>
     <script>
+
       function openTransactionDialog() {
         alert("Dialogue Opened!");
         document.getElementById("transactionDialog").style.display = "block";
@@ -5229,15 +5230,14 @@
   
 
   // Update button text to "Copied"
-  const copyButton = document.getElementById("copyButton");
-  copyButton.textContent = "Copied";
-  alert("Copied to clipboard!");
+          const copyButton = document.getElementById("copyButton");
+          copyButton.textContent = "Copied";
+          alert("Copied to clipboard!");
 
-  // Optional: Revert button text back to "Copy" after a short delay
-  setTimeout(() => {
-    copyButton.textContent = "Copy";
-  }, 2000); // Adjust delay as needed (in milliseconds)
-}
+          // Optional: Revert button text back to "Copy" after a short delay
+          setTimeout(() => {
+            copyButton.textContent = "Copy";
+          }, 2000); // Adjust delay as needed (in milliseconds)
       </script>
   </body>
 </html>
