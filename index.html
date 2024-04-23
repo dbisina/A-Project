@@ -5210,25 +5210,40 @@
       
       // Placeholder function - Replace with your specific transaction logic
       function copyToClipboard() {
-        const copyText = document.getElementById("copyTarget").innerText.trim();
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNode(copyText);
-        selection.removeAllRanges();
-        selection.addRange(range);
-        document.execCommand("copy");
-        selection.removeAllRanges();
+        try {
+          // Get the text content of the target element, removing trailing whitespace
+          const copyText = document.getElementById("copyTarget").innerText.trim();
 
-        // Update button text to "Copied"
-        const copyButton = document.getElementById("copyButton");
-        copyButton.textContent = "Copied";
+          // Create a temporary element to hold the text for copying
+          const tempElement = document.createElement("textarea");
+          tempElement.value = copyText;
+          document.body.appendChild(tempElement);
 
-        // Optional: Revert button text back to "Copy" after a short delay
-        setTimeout(() => {
-          copyButton.textContent = "Copy";
-        }, 2000); // Adjust delay as needed (in milliseconds)
-        document.getElementById("transactionDialog").style.display = "none";
+          // Select the text content within the temporary element
+          tempElement.select();
+
+          // Use `document.execCommand` to copy the selected text
+          document.execCommand("copy");
+
+          // Remove the temporary element
+          document.body.removeChild(tempElement);
+
+          // Update button text to "Copied"
+          const copyButton = document.getElementById("copyButton");
+          copyButton.textContent = "Copied";
+
+          // Optional: Revert button text back to "Copy" after a short delay
+          setTimeout(() => {
+            copyButton.textContent = "Copy";
+          }, 2000); // Adjust delay as needed (in milliseconds)
+
+          document.getElementById("transactionDialog").style.display = "none";
+        } catch (err) {
+          console.error("Error copying text:", err);
+          alert("Failed to copy text. Please try again.");
+        }
       }
+
       </script>
   </body>
 </html>
