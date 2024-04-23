@@ -5200,7 +5200,6 @@
     <script>
 
       function openTransactionDialog() {
-        alert("Dialogue Opened!");
         document.getElementById("transactionDialog").style.display = "block";
       }
 
@@ -5211,33 +5210,25 @@
       
       // Placeholder function - Replace with your specific transaction logic
       function copyToClipboard() {
-        try {
-          const copyText = document.getElementById("copyTarget").innerText.trim();
-          const selection = window.getSelection();
-          const range = document.createRange();
-          range.selectNode(copyText);
-          selection.removeAllRanges();
-          selection.addRange(range);
-          document.execCommand("copy");
-          selection.removeAllRanges();
-          alert("Copied to clipboard!"); // Or use another method to indicate success
-        } catch (err) {
-          console.error("Error copying text:", err);
-          alert("Failed to copy text. Please try again."); // Or provide alternative instructions
-        }
+        const copyText = document.getElementById("copyTarget");
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNode(copyText);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("copy");
+        selection.removeAllRanges();
+
+        // Update button text to "Copied"
+        const copyButton = document.getElementById("copyButton");
+        copyButton.textContent = "Copied";
+
+        // Optional: Revert button text back to "Copy" after a short delay
+        setTimeout(() => {
+          copyButton.textContent = "Copy";
+        }, 2000); // Adjust delay as needed (in milliseconds)
+        document.getElementById("transactionDialog").style.display = "none";
       }
-
-  
-
-  // Update button text to "Copied"
-          const copyButton = document.getElementById("copyButton");
-          copyButton.textContent = "Copied";
-          alert("Copied to clipboard!");
-
-          // Optional: Revert button text back to "Copy" after a short delay
-          setTimeout(() => {
-            copyButton.textContent = "Copy";
-          }, 2000); // Adjust delay as needed (in milliseconds)
       </script>
   </body>
 </html>
